@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850" role="img" aria-labelledby="title">
+<title id="title">Umbra — testes de reprodução do UM</title>
+<defs><g id="um"><path d="M16 16V68C16 108 72 108 72 68V16L104 60L136 16V100" fill="none" stroke="currentColor" stroke-width="16" stroke-linejoin="bevel"/></g><filter id="blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter><clipPath id="partial"><rect width="100" height="116"/></clipPath></defs>
+<rect width="1200" height="850" fill="#111111"/>
+<g fill="#E6E6E6" font-family="DejaVu Sans, sans-serif" font-size="16">
+<text x="48" y="56" letter-spacing="3">UMBRA / PROVAS DE REPRODUÇÃO</text>
+<rect x="48" y="95" width="340" height="270" fill="#000000"/><use href="#um" transform="translate(104 140) scale(1.5)" color="#E6E6E6"/>
+<rect x="430" y="95" width="340" height="270" fill="#E6E6E6"/><use href="#um" transform="translate(486 140) scale(1.5)" color="#000000"/>
+<use href="#um" transform="translate(872 140) scale(1.5)" color="#E6E6E6" filter="url(#blur)"/>
+<text x="48" y="400">Monocromia</text><text x="430" y="400">Inversão / silhueta</text><text x="830" y="400">Desfoque</text>
+<text x="48" y="480">Largura real: 16 / 24 / 32 / 64 / 128 px</text>
+<use href="#um" transform="translate(48 520) scale(.105263)" color="#E6E6E6"/><use href="#um" transform="translate(100 520) scale(.157895)" color="#E6E6E6"/><use href="#um" transform="translate(166 520) scale(.210526)" color="#E6E6E6"/><use href="#um" transform="translate(240 520) scale(.421053)" color="#E6E6E6"/><use href="#um" transform="translate(360 520) scale(.842105)" color="#E6E6E6"/>
+<use href="#um" transform="translate(840 460) scale(1.5)" color="#E6E6E6" clip-path="url(#partial)"/><text x="830" y="680">Oclusão: leitura incompleta.</text>
+<text x="48" y="680">Preferir ≥ 32 px. Não recortar ou espelhar a marca.</text>
+<text x="48" y="764" fill="#A8A8A8">A leitura das letras e a associação à marca precisam de teste com pessoas.</text>
+<text x="48" y="795" fill="#A8A8A8">As provas visuais não medem lembrança nem exclusividade.</text>
+</g></svg>

@@ -1,56 +1,90 @@
-# Umbra
+<div align="center">
+  <img src="branding/umbra/logo/umbra-symbol.svg" alt="Monograma UM da Umbra" width="152" />
 
-Coleção de wallpapers e temas para ferramentas de desenvolvimento e ambientes gráficos.
+  # Umbra
 
-A identidade visual **Umbra** está documentada em [DESIGN.md](DESIGN.md), referência para novos temas, ícones, wallpapers e aplicações da marca.
+  **Ambientes digitais com menos ruído e mais presença.**
 
-Este é um projeto proprietário. Consulte o arquivo [LICENSE](LICENSE) antes de copiar, redistribuir, modificar ou incorporar qualquer conteúdo.
+  <p>
+    <a href="https://github.com/eduardoaugustolb/umbra/stargazers"><img src="https://img.shields.io/github/stars/eduardoaugustolb/umbra?style=flat-square&color=9AB7B0&labelColor=101111" alt="GitHub stars"></a>
+    <a href="https://github.com/eduardoaugustolb/umbra/commits/main"><img src="https://img.shields.io/github/last-commit/eduardoaugustolb/umbra?style=flat-square&color=B79BDD&labelColor=101111" alt="Último commit"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-proprietary-C78995?style=flat-square&labelColor=101111" alt="Licença proprietária"></a>
+  </p>
 
-Veja a [nova prancha de identidade](branding/umbra/system.svg), os [arquivos da marca](branding/umbra/README.md) e a [avaliação do sistema](branding/umbra/REVIEW.md).
+  <p>
+    <code>themes</code> <code>wallpapers</code> <code>branding</code> <code>dark-ui</code> <code>charcoal</code>
+  </p>
+</div>
 
-## Direção visual
+## ✦ O que é Umbra?
 
-- superfícies dark charcoal, com preto profundo usado no editor quando melhora a concentração;
-- branco, cinza e preto na interface para reduzir ruído visual;
-- cor apenas onde comunica sintaxe, estado, diagnóstico ou ação;
-- cada tema deve documentar sua paleta, escopo e instruções de instalação;
-- arquivos grandes de mídia ficam em `wallpapers/`, separados dos temas de software.
+Umbra é um sistema visual para transformar ferramentas digitais em um ambiente coerente, calmo e reconhecível.
 
-## Organização
+Começamos com temas para desenvolvimento e terminal, mas a identidade foi pensada para crescer com wallpapers, ícones, ambientes gráficos e aplicações externas.
+
+> Escuro sem ser vazio. Colorido sem ser barulhento.
+
+## ◼ Temas disponíveis
+
+| Aplicação | Tema | Experiência |
+| --- | --- | --- |
+| [Zed](themes/zed/umbra/README.md) | Umbra | Editor dark charcoal com sintaxe semântica e acentos controlados |
+| [Kitty](themes/kitty/umbra/README.md) | Umbra | Terminal com ANSI coerente e superfícies unificadas |
+| [Starship](themes/starship/umbra/README.md) | Umbra | Prompt compacto com contexto Git e runtimes discretos |
+
+Cada tema possui tutorial individual de instalação, changelog e arquivo de configuração próprio.
+
+## ◌ Direção visual
+
+- **Charcoal primeiro:** superfícies escuras, consistentes e confortáveis para uso prolongado.
+- **Neutros como base:** branco, cinza e preto formam o ambiente.
+- **Cor com função:** os acentos comunicam sintaxe, estado, diagnóstico ou ação.
+- **Memória visual:** o monograma UM e a linguagem de formas acompanham todos os produtos.
+- **Escala controlada:** cada integração preserva os mesmos tokens, relações e intenções.
+
+## ▣ Wallpapers
+
+Os wallpapers ficam em [`wallpapers/`](wallpapers/), separados dos temas de software. A coleção atual inclui composições escuras, ficção científica, anime e atmosferas noturnas.
+
+## ◎ Branding
+
+O sistema de identidade da Umbra está em [`branding/umbra/`](branding/umbra/README.md). Ele inclui:
+
+- símbolo UM em versões clara e escura;
+- avatar e exports rasterizados;
+- prancha de sistema visual;
+- provas de reprodução e reconhecimento;
+- assets para wallpapers e aplicações.
+
+Leia o [guia de identidade](DESIGN.md) antes de criar novos temas, ícones ou peças da marca.
+
+## ⌘ Organização
 
 ```text
 themes/
-├── zed/<theme-family>/       # famílias de temas compatíveis com o Zed
-├── kitty/<theme-family>/     # temas para o Kitty
-├── starship/<theme-family>/  # prompts para o Starship
-└── desktop/<theme-family>/   # temas para ambientes gráficos (futuro)
+├── zed/umbra/       # tema para o Zed
+├── kitty/umbra/     # tema para o Kitty
+├── starship/umbra/  # prompt para o Starship
+└── desktop/         # ambientes gráficos futuros
 wallpapers/
-├── static/                   # wallpapers estáticos (futuro)
-└── animated/                 # wallpapers animados; vídeos existentes ainda ficam na raiz
+├── static/          # wallpapers estáticos futuros
+└── animated/        # wallpapers animados futuros
+branding/umbra/      # logo, exports e sistema visual
 ```
 
-Uma família do Zed é mantida em um diretório próprio para que variantes (por exemplo, OLED e Soft Black) possam evoluir sem misturar assets ou documentação. O JSON segue o schema oficial do Zed e deve ser validado antes de cada release.
+Cada família deve manter seu próprio `README.md`, `CHANGELOG.md` e arquivos de configuração. O tutorial individual precisa explicar requisitos, instalação, atualização e remoção ou reversão.
 
-Cada tema publicado, independentemente do aplicativo, deve possuir um `README.md` dentro do próprio diretório da família. Esse tutorial individual precisa explicar requisitos, instalação, atualização e remoção/reversão sem depender apenas da documentação global.
+## ↗ Comece aqui
 
-## Temas disponíveis
+1. Escolha uma integração na tabela acima.
+2. Abra o README do tema.
+3. Siga o tutorial sem sobrescrever suas configurações pessoais.
+4. Compartilhe feedback sobre contraste, legibilidade e consistência visual.
 
-### Zed
+## ⚖ Licença
 
-- [Umbra](themes/zed/umbra/README.md) — dark OLED/AMOLED, interface monocromática e sintaxe com acentos controlados.
+Umbra é um projeto proprietário. O uso pessoal local dos temas e wallpapers é permitido conforme os termos de [`LICENSE`](LICENSE). Cópia, redistribuição, modificação, incorporação em outros projetos e uso comercial exigem autorização prévia.
 
-### Kitty
+## #umbra
 
-- [Umbra](themes/kitty/umbra/README.md) — terminal dark charcoal com ANSI semântico e superfícies unificadas.
-
-### Starship
-
-- [Umbra](themes/starship/umbra/README.md) — prompt compacto com contexto Git e runtimes discretos.
-
-## Instalação local
-
-As instruções de instalação ficam no `README.md` de cada família. Para o Zed, copie o JSON para `~/.config/zed/themes/` no Linux/macOS ou para `%USERPROFILE%\\AppData\\Roaming\\Zed\\themes\\` no Windows e selecione-o pelo `theme selector: toggle`. Para Kitty e Starship, prefira `include`/mesclagem para preservar configurações pessoais.
-
-## Versionamento
-
-Mudanças de paleta ou compatibilidade devem ser registradas no changelog da família. Use tags semver quando uma família estiver pronta para distribuição: `zed/umbra/v0.1.0`.
+`quiet surfaces` · `semantic color` · `night workflows` · `focused tools`

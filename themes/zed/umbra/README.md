@@ -24,14 +24,17 @@ Tema dark para o Zed inspirado em ambientes noturnos de baixo brilho. Usa charco
 
 A regra é conter, não eliminar, a cor: cerca de 85–90% da experiência permanece em cinzas escuros e neutros. Editor, terminal e componentes de UI partem da mesma superfície Charcoal; Graphite aparece apenas em estados interativos. As categorias seguem uma separação semelhante à lógica do Min Theme, mas com cores próprias e menos saturadas; funções e variáveis comuns continuam claras e neutras.
 
-## Instalação
+## Instalação fácil
 
-### Requisitos
+Você não precisa entender configurações do Zed para instalar este tema. O
+comando abaixo cria a pasta correta e copia apenas o arquivo do Umbra.
+
+### Você precisa de
 
 - Zed instalado.
 - Este repositório disponível localmente.
 
-### Instalar
+### Instalar passo a passo
 
 A partir da raiz do repositório, execute:
 
@@ -41,6 +44,9 @@ cp themes/zed/umbra/umbra.json "$HOME/.config/zed/themes/umbra.json"
 ```
 
 Abra o seletor de temas do Zed (`Ctrl-K Ctrl-T` / `Cmd-K Cmd-T`) e escolha `Umbra`.
+
+Se você não sabe onde está a raiz do repositório, abra este README no GitHub e
+use o caminho completo da pasta onde o projeto foi baixado.
 
 ### Atualizar
 

@@ -2,14 +2,17 @@
 
 Prompt compacto e semântico para o Starship. A maior parte permanece neutra; lilás identifica branch, azul-sálvia indica prontidão, rosa indica erro e os tons âmbar/dourado identificam runtimes detectados.
 
-## Instalação
+## Instalação fácil
 
-### Requisitos
+O Starship costuma ter personalizações próprias. Por isso, vamos adicionar o
+Umbra à configuração atual, preservando o restante do seu prompt.
+
+### Você precisa de
 
 - Starship instalado e inicializado no shell.
 - Este repositório disponível localmente.
 
-### Instalar
+### Instalar passo a passo
 
 Como você já possui uma configuração pessoal, não substitua o arquivo inteiro. A partir da raiz do repositório, faça uma cópia de segurança:
 

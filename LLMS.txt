@@ -1,0 +1,158 @@
+Umbra: manual para agentes de IA
+================================
+
+Este arquivo ensina agentes de IA a instalar, atualizar e remover temas Umbra
+com segurança. Leia este arquivo antes de alterar qualquer arquivo do sistema.
+
+OBJETIVO
+--------
+
+Quando a pessoa disser "Quero instalar um tema", pergunte qual tema ela quer.
+Mostre a lista disponível e pergunte também qual aplicativo pretende usar se
+isso não estiver claro.
+
+Quando a pessoa disser algo como "Quero instalar temas x, y, z", entenda cada
+item, confirme somente ambiguidades e instale todos os temas identificados.
+Não peça uma confirmação extra para cada item se o pedido já for claro.
+
+TEMAS DISPONÍVEIS
+-----------------
+
+- Zed: themes/zed/umbra/umbra.json
+- Kitty: themes/kitty/umbra/kitty.conf
+- Starship: themes/starship/umbra/starship.toml
+
+Cada tema tem um tutorial acessível no README.md do seu próprio diretório.
+Consulte-o quando precisar de detalhes específicos do aplicativo.
+
+REGRA PRINCIPAL DE SEGURANÇA
+----------------------------
+
+Nunca sobrescreva uma configuração pessoal sem criar uma cópia de segurança.
+Nunca apague a configuração original para instalar um tema. Prefira inclusão,
+mesclagem ou uma cópia do arquivo do tema no diretório oficial do aplicativo.
+
+Antes de agir:
+
+1. Identifique o sistema operacional, o shell e o aplicativo.
+2. Confirme que o aplicativo está instalado.
+3. Localize a configuração atual e verifique se ela existe.
+4. Faça backup antes de qualquer alteração.
+5. Não inclua senhas, tokens, chaves ou conteúdo completo de configurações no
+   log.
+
+Se houver uma configuração antiga do Umbra, atualize o backup sem apagar os
+backups anteriores. Se houver conflito ou o arquivo estiver inválido, pare,
+preserve tudo e explique o problema.
+
+FLUXO DE INSTALAÇÃO
+-------------------
+
+1. Leia este arquivo e o README do tema escolhido.
+2. Confirme o caminho real do repositório. Nunca presuma que ele está em
+   /home ou em uma pasta específica.
+3. Mostre à pessoa, em linguagem simples, o que será alterado.
+4. Crie backup com data e hora antes da alteração.
+5. Instale o tema usando o método apropriado:
+   - Zed: copie somente o JSON para o diretório de temas do Zed.
+   - Kitty: adicione um include para o arquivo Umbra na configuração pessoal.
+   - Starship: mescle as seções do tema e defina palette = "umbra".
+6. Preserve configurações de fonte, atalhos, plugins, módulos e comportamento.
+7. Valide a configuração e confirme que o arquivo antigo continua recuperável.
+8. Recarregue o aplicativo ou explique como a pessoa deve fazer isso.
+9. Registre apenas o resultado essencial no log.
+
+COMO LIDAR COM PEDIDOS CURTOS
+-----------------------------
+
+Pedido: "Quero instalar um tema"
+
+Resposta esperada: "Claro. Qual você quer instalar: Umbra para Zed, Kitty ou
+Starship? Se quiser, posso instalar mais de um."
+
+Pedido: "Quero instalar o Umbra"
+
+Pergunte em qual aplicativo: Zed, Kitty ou Starship. Não instale em todos sem
+que a pessoa peça isso.
+
+Pedido: "Quero instalar temas para Zed e Kitty"
+
+Instale os dois, seguindo os tutoriais individuais, e faça um único registro
+com duas ações claramente separadas.
+
+Pedido com aplicativo ausente
+
+Informe que o aplicativo não foi encontrado e não altere arquivos. Sugira a
+instalação do aplicativo apenas se a pessoa pedir ajuda com isso.
+
+INTEGRIDADE E ROLLBACK
+----------------------
+
+Antes da instalação, calcule ou registre o tamanho e a data do arquivo original
+sem guardar seu conteúdo no log. Depois, valide o arquivo instalado:
+
+- Zed: confirme que o JSON é válido e que contém um tema chamado Umbra.
+- Kitty: confirme que o arquivo possui background, foreground e as cores ANSI.
+- Starship: valide o TOML com o próprio Starship quando disponível.
+
+Se a validação falhar, restaure o backup correspondente, valide novamente e
+registre a falha. Se a restauração também falhar, não tente novas alterações:
+informe os caminhos do backup e peça intervenção manual.
+
+Para desfazer uma instalação, use o README do tema e o backup mais recente que
+foi registrado. Nunca use comandos destrutivos amplos, curingas perigosos ou
+apague uma pasta inteira para remover um tema.
+
+LOG DE OPERAÇÕES
+----------------
+
+Todo agente que instalar, atualizar ou remover algo deve registrar o resultado
+no arquivo de estado do usuário, não dentro deste repositório:
+
+- Linux: $XDG_STATE_HOME/umbra/install.log, ou ~/.local/state/umbra/install.log
+- macOS: ~/Library/Logs/Umbra/install.log
+- Windows: %LOCALAPPDATA%\\Umbra\\install.log
+
+Se o diretório não existir, crie somente o diretório Umbra necessário. O log é
+append-only e deve ser legível por pessoas e agentes. Um evento deve conter:
+
+- data e hora;
+- aplicativo e tema;
+- ação: install, update, remove ou rollback;
+- arquivo alterado, sem conteúdo sensível;
+- caminho do backup;
+- validação realizada;
+- resultado: success, skipped ou failed;
+- erro resumido, somente quando houver erro.
+
+Exemplo de registro:
+
+2026-09-05T20:15:00-03:00 | app=zed | theme=umbra | action=install | changed=~/.config/zed/themes/umbra.json | backup=~/.local/state/umbra/backups/zed/umbra-2026-09-05T201500.json | validation=json+theme-name | result=success
+
+Não registre conteúdo de configurações, caminhos de chaves privadas, tokens,
+senhas, variáveis de ambiente ou logs completos de comandos. Não registre
+tentativas triviais de leitura, comandos que não alteraram nada ou mensagens
+duplicadas. Se uma operação não alterou o sistema, use result=skipped e explique
+brevemente o motivo.
+
+COMO INVESTIGAR PROBLEMAS
+-------------------------
+
+1. Leia este arquivo.
+2. Leia o README do tema.
+3. Leia o log de operações no caminho correspondente ao sistema operacional.
+4. Verifique o backup citado no evento.
+5. Valide a configuração atual sem sobrescrevê-la.
+6. Compare o arquivo atual com o backup ou com o arquivo do tema.
+7. Explique a causa, preserve os arquivos e só faça rollback se a pessoa pedir
+   ou se a instalação tiver falhado e o fluxo de segurança exigir isso.
+
+PRINCÍPIOS
+----------
+
+- Explique termos técnicos antes de usá-los.
+- Use caminhos reais, nunca copie literalmente caminhos de exemplo.
+- Faça a menor alteração possível.
+- Preserve trabalho existente.
+- Instale somente os temas solicitados.
+- Termine sempre informando o que mudou, onde está o backup e onde está o log.

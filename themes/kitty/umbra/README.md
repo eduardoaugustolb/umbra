@@ -2,14 +2,17 @@
 
 Tema escuro de carvão para o Kitty, alinhado ao Umbra do Zed. A interface usa uma única superfície base (`#101111`), enquanto o ANSI mantém acentos semânticos suaves para erros, sucesso, avisos, tipos e links.
 
-## Instalação
+## Instalação fácil
 
-### Requisitos
+O Kitty já possui um arquivo de configurações. Em vez de substituir esse
+arquivo, vamos apenas dizer ao Kitty onde encontrar as cores do Umbra.
+
+### Você precisa de
 
 - Kitty instalado.
 - Este repositório disponível localmente.
 
-### Instalar
+### Instalar passo a passo
 
 Não sobrescreva sua configuração pessoal. A partir da raiz do repositório, adicione esta linha ao seu `~/.config/kitty/kitty.conf`:
 
@@ -18,6 +21,10 @@ include /caminho/absoluto/para/temas/themes/kitty/umbra/kitty.conf
 ```
 
 Substitua o caminho pelo caminho absoluto deste repositório. Depois, recarregue o Kitty com `Ctrl+Shift+F5` ou reinicie a janela.
+
+Se não souber o caminho completo, abra a pasta do projeto no gerenciador de
+arquivos, copie o endereço da pasta e acrescente
+`/themes/kitty/umbra/kitty.conf`.
 
 O arquivo contém somente cores e bordas visuais. Atalhos, fontes, padding e comportamento de abas continuam sob controle da configuração local.
 

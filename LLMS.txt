@@ -36,7 +36,8 @@ Antes de agir:
 
 1. Identifique o sistema operacional, o shell e o aplicativo.
 2. Confirme que o aplicativo está instalado.
-3. Localize a configuração atual e verifique se ela existe.
+3. Localize somente a configuração necessária e verifique se ela existe. Não
+   faça buscas recursivas a partir de /, $HOME ou outra pasta ampla.
 4. Faça backup antes de qualquer alteração.
 5. Não inclua senhas, tokens, chaves ou conteúdo completo de configurações no
    log.
@@ -61,6 +62,10 @@ FLUXO DE INSTALAÇÃO
 7. Valide a configuração e confirme que o arquivo antigo continua recuperável.
 8. Recarregue o aplicativo ou explique como a pessoa deve fazer isso.
 9. Registre apenas o resultado essencial no log.
+
+Não use comandos de diagnóstico que percorram o sistema inteiro, como `find /`
+ou `ls -R` em uma pasta ampla. Verifique apenas os caminhos oficiais do
+aplicativo e o caminho do repositório fornecido ou clonado.
 
 COMO LIDAR COM PEDIDOS CURTOS
 -----------------------------
@@ -95,13 +100,32 @@ sem guardar seu conteúdo no log. Depois, valide o arquivo instalado:
 - Kitty: confirme que o arquivo possui background, foreground e as cores ANSI.
 - Starship: valide o TOML com o próprio Starship quando disponível.
 
+Uma validação só pode ser marcada como bem-sucedida se o comando terminar com
+status zero e a saída esperada for observada. Não esconda falhas usando pipes
+como `comando | head` antes de verificar o status do comando. Se uma validação
+falhar, registre `result=failed`, interrompa o fluxo e faça rollback conforme a
+regra abaixo.
+
+Não instale bibliotecas, pacotes Python ou outras dependências apenas para
+editar uma configuração. Use as ferramentas já disponíveis. Se uma dependência
+for indispensável, explique antes, peça autorização e registre a alteração.
+
+Ao mesclar TOML ou outro formato, preserve chaves existentes, comentários,
+ordem e formatação sempre que possível. Prefira alteração textual direcionada
+ou um arquivo temporário validado seguido de substituição atômica. Não
+reserialize a configuração inteira sem necessidade.
+
 Se a validação falhar, restaure o backup correspondente, valide novamente e
 registre a falha. Se a restauração também falhar, não tente novas alterações:
 informe os caminhos do backup e peça intervenção manual.
 
 Para desfazer uma instalação, use o README do tema e o backup mais recente que
-foi registrado. Nunca use comandos destrutivos amplos, curingas perigosos ou
-apague uma pasta inteira para remover um tema.
+foi registrado para aquele aplicativo e tema. Use o caminho exato registrado no
+evento. Nunca use curingas como `backup-*.toml`, nunca escolha um backup apenas
+por ordem alfabética e nunca apague uma pasta inteira para remover um tema.
+
+Antes de restaurar, confirme que o backup exato existe. Depois da restauração,
+valide a configuração e registre `action=rollback` com o mesmo caminho exato.
 
 LOG DE OPERAÇÕES
 ----------------
@@ -135,6 +159,16 @@ tentativas triviais de leitura, comandos que não alteraram nada ou mensagens
 duplicadas. Se uma operação não alterou o sistema, use result=skipped e explique
 brevemente o motivo.
 
+Também não imprima configurações pessoais completas na conversa, no transcript
+da sessão ou na saída de ferramentas. Para inspecionar uma configuração, leia
+somente as chaves necessárias, mascarando valores potencialmente sensíveis.
+Verifique existência, tamanho, hash ou presença de uma chave sem revelar o
+conteúdo inteiro.
+
+Falhas relevantes de backup, mesclagem, validação ou rollback devem ser
+registradas porque ajudam outro agente a continuar o diagnóstico. Registre a
+falha de forma resumida, sem copiar a saída completa do comando.
+
 COMO INVESTIGAR PROBLEMAS
 -------------------------
 
@@ -144,8 +178,9 @@ COMO INVESTIGAR PROBLEMAS
 4. Verifique o backup citado no evento.
 5. Valide a configuração atual sem sobrescrevê-la.
 6. Compare o arquivo atual com o backup ou com o arquivo do tema.
-7. Explique a causa, preserve os arquivos e só faça rollback se a pessoa pedir
-   ou se a instalação tiver falhado e o fluxo de segurança exigir isso.
+7. Explique a causa, preserve os arquivos e só faça rollback com o caminho exato
+   do backup. Se a instalação tiver falhado, o fluxo de segurança exige o
+   rollback; em outros casos, peça autorização à pessoa.
 
 PRINCÍPIOS
 ----------

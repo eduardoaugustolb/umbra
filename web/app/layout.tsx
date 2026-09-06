@@ -1,10 +1,25 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { DM_Sans, Manrope } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./styles/base.css";
 import "./styles/hero.css";
 import "./styles/notebook.css";
 import "./styles/sections.css";
 import "./styles/cursor.css";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  variable: "--font-dm-sans",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-manrope",
+});
 
 const title = "Temas escuros e coerentes para VS Code, Zed, Kitty e Starship | Umbra";
 const description =
@@ -15,7 +30,6 @@ export const metadata: Metadata = {
   description,
   keywords: ["umbra", "tema escuro", "dark theme", "zed", "kitty", "starship", "terminal", "wallpapers", "sistema visual"],
   authors: [{ name: "Umbra", url: "https://github.com/eduardoaugustolb/umbra" }],
-  themeColor: "#050505",
   robots: { index: true, follow: true },
   openGraph: {
     title,
@@ -35,6 +49,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#050505",
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -46,7 +64,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${dmSans.variable} ${manrope.variable}`}>
       <body>
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />

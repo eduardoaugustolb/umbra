@@ -28,7 +28,7 @@ export function Notebook() {
               alt="Tema Umbra no VS Code, na tela do notebook"
               fill
               sizes="(max-width: 760px) 88vw, 72vw"
-              preload
+              priority
             />
             <Image
               className="capture-zed"
@@ -36,7 +36,6 @@ export function Notebook() {
               alt="Tema Umbra no Zed, na tela do notebook"
               fill
               sizes="(max-width: 760px) 88vw, 72vw"
-              preload
             />
             <Image
               className="capture-kitty"
@@ -44,7 +43,6 @@ export function Notebook() {
               alt="Tema Umbra no Kitty, na tela do notebook"
               fill
               sizes="(max-width: 760px) 88vw, 72vw"
-              preload
             />
           </div>
         </div>

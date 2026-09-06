@@ -11,7 +11,7 @@
   grid-area: 1/1;
 }
 .notebook-app h2 {
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-manrope), "Manrope", sans-serif;
   font-weight: 400;
   font-size: clamp(24px, 3vw, 40px);
   letter-spacing: -0.035em;

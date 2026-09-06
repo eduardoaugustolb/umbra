@@ -182,7 +182,7 @@ export default function SlicedWaves({
       alpha: true,
       premultipliedAlpha: true,
       antialias: false,
-      dpr: Math.min(window.devicePixelRatio || 1, 2),
+      dpr: 1,
     });
 
     const gl = renderer.gl;

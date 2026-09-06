@@ -22,7 +22,9 @@ gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 export function LandingPage() {
   const root = useRef<HTMLDivElement>(null);
   const lenisRef = useRef<Lenis | null>(null);
+  const bgGoneRef = useRef(false);
   const [bgOn, setBgOn] = useState(false);
+  const [bgGone, setBgGone] = useState(false);
 
   // CTA leva ao momento do Zed na sequência (não pula os temas para #mais).
   const goToThemes = (event: MouseEvent<HTMLButtonElement>) => {
@@ -176,6 +178,12 @@ export function LandingPage() {
             invalidateOnRefresh: true,
             onUpdate(self) {
               const p = self.progress;
+              // WebGL do fundo desmonta após a hero: GPU parada no resto da história.
+              const gone = p > 0.35;
+              if (gone !== bgGoneRef.current) {
+                bgGoneRef.current = gone;
+                setBgGone(gone);
+              }
               // VS Code entra com o notebook por um triz de terminar de abrir.
               if (p > 0.45 && !firstShown) {
                 firstShown = true;
@@ -296,7 +304,7 @@ export function LandingPage() {
         <div className="landing-runway">
           <div className="landing-stage">
             <div className="hero-bg" aria-hidden="true">
-              {bgOn && (
+              {bgOn && !bgGone && (
                 <SlicedWaves
                   color1="#3B4242"
                   color2="#101111"

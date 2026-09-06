@@ -13,6 +13,7 @@ header{height:100px;position:absolute;inset:0 0 auto;z-index:50;display:flex;ali
 .wordmark{font-family:'Manrope',sans-serif;font-size:32px;font-weight:600;letter-spacing:-2px}
 .header-link{font-size:13px;color:var(--bone);padding:13px 17px;border:1px solid #363b39;border-radius:8px}
 .header-link span{margin-left:12px}
+.header-link svg,.landing-heading .cta svg,.more-list svg,footer nav svg,.notebook-app svg{vertical-align:-2px}
 
 /* ---- estudo 02 na landing ---- */
 .landing-runway{height:calc(300svh + 160px);position:relative}

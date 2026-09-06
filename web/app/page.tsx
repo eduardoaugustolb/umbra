@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
+import { ArrowDown, ArrowUpRight } from "@phosphor-icons/react";
 import { MotionCursor } from "./MotionCursor";
 
 const SlicedWaves = dynamic(() => import("./SlicedWaves"), { ssr: false });
@@ -153,7 +154,7 @@ export default function Home() {
       <a className="skip-link" href="#mais">Ir para o restante do ambiente</a>
       <header>
         <a className="wordmark" href="#inicio" aria-label="Umbra, início">umbra</a>
-        <a className="header-link" data-cursor="button" href="#mais" onClick={goToThemes}>Explore o ambiente <span>↗</span></a>
+        <a className="header-link" data-cursor="button" href="#mais" onClick={goToThemes}>Explore o ambiente <span aria-hidden="true"><ArrowUpRight size={13} /></span></a>
       </header>
       <main id="inicio">
         <div className="landing-runway">
@@ -185,14 +186,14 @@ export default function Home() {
             <div className="landing-heading">
               <h1>As suas ferramentas, no mesmo ambiente visual.</h1>
               <p>Umbra é um sistema visual com temas escuros e coerentes para o seu fluxo de trabalho: mesmas superfícies, mesmo contraste e cor com função.</p>
-              <a className="cta" data-cursor="button" href="#mais" onClick={goToThemes}>Explorar os temas <span aria-hidden="true">↓</span></a>
+              <a className="cta" data-cursor="button" href="#mais" onClick={goToThemes}>Explorar os temas <span aria-hidden="true"><ArrowDown size={14} /></span></a>
             </div>
             <div className="notebook-apps">
               {[["zed", "Zed", "Editor"], ["kitty", "Kitty", "Terminal"]].map(([id, name, role]) => (
                 <div className={`notebook-app app-${id}`} key={id}>
                   <h2 className="app-reveal">Tema Umbra para {name}</h2>
                   <a href={`${repo}/tree/main/themes/${id}/umbra`} target="_blank" rel="noreferrer">
-                    <span className="app-reveal">Guia de instalação ↗</span>
+                    <span className="app-reveal">Guia de instalação</span> <ArrowUpRight size={13} aria-hidden="true" />
                   </a>
                   <p>{role}</p>
                 </div>
@@ -227,7 +228,7 @@ export default function Home() {
                 <span>{item.role}</span>
                 <strong>{item.name}</strong>
                 <span>{item.detail}</span>
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true"><ArrowUpRight size={22} /></span>
               </a>
             ))}
           </div>
@@ -237,9 +238,9 @@ export default function Home() {
         <a className="wordmark" href="#inicio">umbra</a>
         <p>Temas escuros e coerentes para Zed, Kitty e Starship, além de wallpapers.</p>
         <nav aria-label="Links do projeto">
-          <a href={`${repo}#readme`}>Documentação ↗</a>
-          <a href={repo}>GitHub ↗</a>
-          <a href={`${repo}/blob/main/LICENSE`}>Licença ↗</a>
+          <a href={`${repo}#readme`}>Documentação <ArrowUpRight size={11} aria-hidden="true" /></a>
+          <a href={repo}>GitHub <ArrowUpRight size={11} aria-hidden="true" /></a>
+          <a href={`${repo}/blob/main/LICENSE`}>Licença <ArrowUpRight size={11} aria-hidden="true" /></a>
         </nav>
         <span className="footer-note">UM AMBIENTE EM CONSTRUÇÃO / 2026</span>
       </footer>

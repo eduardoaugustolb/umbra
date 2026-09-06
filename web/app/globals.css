@@ -14,9 +14,9 @@ header{height:100px;position:absolute;inset:0 0 auto;z-index:50;display:flex;ali
 .header-link{font-size:13px;color:var(--bone);padding:13px 17px;border:1px solid #363b39;border-radius:8px}
 .header-link span{margin-left:12px}
 .header-link svg,.landing-heading .cta svg,.more-list svg,footer nav svg,.notebook-app svg{flex:none}
-.header-link,.landing-heading .cta,.notebook-app a,footer nav a{display:inline-flex;align-items:center}
+.header-link,.landing-heading .cta,.notebook-app a,footer nav a{display:inline-flex;align-items:center;justify-content:center}
 .notebook-app a,footer nav a{gap:8px}
-.more-list a>span:last-child{display:flex;align-items:center}
+.more-list a>span:last-child{display:flex;align-items:center;justify-content:center}
 
 /* ---- estudo 02 na landing ---- */
 .landing-runway{height:calc(300svh + 160px);position:relative}

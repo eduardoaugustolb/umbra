@@ -1,0 +1,7 @@
+id = "umbra-theme"
+name = "Umbra Theme"
+version = "0.7.0"
+schema_version = 1
+authors = ["Eduardo Augusto Lima Bueno"]
+description = "Dark charcoal theme with semantic accents and controlled color"
+repository = "https://github.com/eduardoaugustolb/umbra"

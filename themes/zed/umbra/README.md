@@ -42,7 +42,7 @@ A partir da raiz do repositório, execute:
 
 ```sh
 mkdir -p "$HOME/.config/zed/themes"
-cp themes/zed/umbra/umbra.json "$HOME/.config/zed/themes/umbra.json"
+cp themes/zed/umbra/themes/umbra.json "$HOME/.config/zed/themes/umbra.json"
 ```
 
 Abra o seletor de temas do Zed (`Ctrl-K Ctrl-T` / `Cmd-K Cmd-T`) e escolha `Umbra`.

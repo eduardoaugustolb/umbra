@@ -18,7 +18,7 @@ Não peça uma confirmação extra para cada item se o pedido já for claro.
 TEMAS DISPONÍVEIS
 -----------------
 
-- Zed: themes/zed/umbra/umbra.json
+- Zed: themes/zed/umbra/themes/umbra.json
 - VS Code: themes/vscode/umbra (package.json + themes/umbra-color-theme.json + themes/umbra-ink-color-theme.json)
 - Kitty: themes/kitty/umbra/kitty.conf
 - Starship: themes/starship/umbra/starship.toml

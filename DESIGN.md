@@ -163,7 +163,7 @@ Para cada novo tema:
 5. Inspecionar o tema no aplicativo, com conteúdo real, incluindo menus, busca, seleção, erros, diffs e painéis.
 6. Registrar versão testada, instalação, limitações, capturas reais e changelog.
 
-A [implementação do Zed](themes/zed/umbra/umbra.json) é a primeira referência concreta. Ela ainda não representa cobertura completa de todos os estados ou validação visual em todos os contextos. Um JSON sintaticamente válido não comprova conformidade com o schema nem qualidade visual no aplicativo.
+A [implementação do Zed](themes/zed/umbra/themes/umbra.json) é a primeira referência concreta. Ela ainda não representa cobertura completa de todos os estados ou validação visual em todos os contextos. Um JSON sintaticamente válido não comprova conformidade com o schema nem qualidade visual no aplicativo.
 
 Quando uma plataforma exigir ajustes, manter as funções das cores e documentar a diferença. Não prometer compatibilidade com versões que não foram verificadas.
 

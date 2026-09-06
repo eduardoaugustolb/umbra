@@ -2,6 +2,8 @@
 
 Tema escuro de carvão para o Kitty, alinhado ao Umbra do Zed. A interface usa uma única superfície base (`#101111`), enquanto o ANSI mantém acentos semânticos suaves para erros, sucesso, avisos, tipos e links.
 
+![Tema Umbra no Kitty](screenshots/1-fastfetch.png)
+
 ## Instalação fácil
 
 O Kitty já possui um arquivo de configurações. Em vez de substituir esse

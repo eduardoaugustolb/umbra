@@ -2,6 +2,8 @@
 
 Tema dark para o Zed inspirado em ambientes noturnos de baixo brilho. Usa charcoal em vez de preto absoluto para separar editor, painéis e controles; a sintaxe recebe poucos acentos frios e pouco saturados.
 
+![Tema Umbra no Zed](screenshots/1-main.png)
+
 ## Paleta
 
 | Função | Cor | Uso |

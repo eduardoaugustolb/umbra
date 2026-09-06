@@ -3,7 +3,7 @@
   top: 5svh;
   left: 6%;
   right: 6%;
-  z-index: 4;
+  z-index: var(--z-apps);
   display: grid;
   text-align: center;
 }
@@ -15,13 +15,13 @@
   font-weight: 400;
   font-size: clamp(24px, 3vw, 40px);
   letter-spacing: -0.035em;
-  margin: 0 0 12px;
+  margin: 0 0 var(--space-3);
 }
 .notebook-app a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--space-2);
   font-size: 13px;
   border-bottom: 1px solid #c5c7c5;
   padding-bottom: 5px;
@@ -32,7 +32,7 @@
 .notebook-app p {
   font-size: 11px;
   color: var(--muted);
-  margin: 12px 0 0;
+  margin: var(--space-3) 0 0;
 }
 .app-zed {
   visibility: hidden;
@@ -45,7 +45,7 @@
   perspective: 1800px;
   perspective-origin: 50% 38%;
   pointer-events: none;
-  z-index: 2;
+  z-index: var(--z-scene);
 }
 .notebook {
   width: min(72vw, 1050px, calc(57svh * 1.65));
@@ -58,7 +58,7 @@
   position: relative;
   background: #111313;
   border: 2px solid #555b5a;
-  border-radius: 18px 18px 5px 5px;
+  border-radius: var(--radius-xl) var(--radius-xl) 5px 5px;
   padding: 22px 12px 14px;
   transform-origin: center bottom;
   backface-visibility: hidden;
@@ -70,14 +70,14 @@
   left: calc(50% - 2px);
   width: 4px;
   height: 4px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: #697271;
 }
 .capture-frame {
   position: relative;
   aspect-ratio: 1920/1046;
   border: 1px solid #3b4242;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
   background: #101111;
 }
@@ -102,7 +102,7 @@
   transform-style: preserve-3d;
   background: linear-gradient(180deg, #232827, #555b59 65%, #717775);
   border: 1px solid #858a89;
-  border-radius: 3px 3px 14px 14px;
+  border-radius: var(--radius-xs) var(--radius-xs) 14px 14px;
 }
 .notebook-keyboard {
   position: absolute;
@@ -110,14 +110,14 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 4px;
+  gap: var(--space-1);
   background: #171a19;
   padding: 6px;
   border-radius: 5px;
 }
 .notebook-keyboard i {
   display: block;
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
   background: #080a09;
   border: 1px solid #555b5a;
   box-shadow: 0 2px 0 #000;
@@ -129,7 +129,7 @@
   width: 32%;
   height: 26%;
   border: 1px solid #252727;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   background: #555b59;
 }
 .notebook-front {
@@ -141,7 +141,7 @@
   transform-origin: top;
   transform: rotateX(-90deg);
   background: linear-gradient(#858a89, #252727);
-  border-radius: 0 0 6px 6px;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
 @media (max-width: 760px) {
@@ -180,7 +180,7 @@
     left: auto;
     right: auto;
     display: flex;
-    gap: 24px;
+    gap: var(--space-6);
     flex-wrap: wrap;
     justify-content: center;
   }

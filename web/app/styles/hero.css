@@ -15,14 +15,14 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: var(--z-bg);
   pointer-events: none;
 }
 .landing-heading {
   text-align: center;
   max-width: 780px;
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 .landing-heading > p:last-child {
   font-size: 15px;
@@ -43,10 +43,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 32px;
+  margin-top: var(--space-8);
   padding: 15px 26px;
   border: 0;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   background: #c5c7c5;
   color: #050505;
   font-family: inherit;
@@ -111,7 +111,7 @@
   right: 6%;
   height: 2px;
   background: #252727;
-  z-index: 2000;
+  z-index: var(--z-meter);
 }
 .landing-meter span {
   display: block;
@@ -127,7 +127,7 @@
   right: 0;
   bottom: 0;
   height: 48svh;
-  z-index: 3;
+  z-index: var(--z-fade);
   pointer-events: none;
   background: linear-gradient(
     180deg,
@@ -141,7 +141,7 @@
 .notebook-apps,
 .notebook {
   opacity: 0;
-  transition: opacity 0.9s ease;
+  transition: opacity var(--duration-slow) var(--ease-brand);
 }
 .landing-ready .landing-heading {
   opacity: 1;

@@ -4,11 +4,11 @@
   left: 0;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: white;
   mix-blend-mode: difference;
   pointer-events: none;
-  z-index: 1000;
+  z-index: var(--z-cursor);
   opacity: 0;
   will-change: transform;
 }

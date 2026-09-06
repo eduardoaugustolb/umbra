@@ -29,6 +29,18 @@ Favicon em `app/icon.svg` (monograma UM sobre preto) + apple-touch-icon em `publ
 
 Mobile mantém o percurso por scroll. Movimento reduzido apresenta o conteúdo sem animação. A limpeza de GSAP, ticker e Lenis ocorre ao desmontar o componente ou mudar a preferência de movimento.
 
+## Tokens
+
+Sem Tailwind por decisão: os tokens vivem no `:root` de `app/styles/base.css` e o CSS segue dividido por responsabilidade (`hero.css`, `notebook.css`, `sections.css`, `cursor.css`).
+
+- Cores: `--ink`, `--bone`, `--muted`, `--line`.
+- Espaçamento (`--space-*`, múltiplos de 4px): 1=4px, 2=8px, 3=12px, 4=16px, 5=20px, 6=24px, 8=32px, 10=40px.
+- Raios (`--radius-*`): xs=3px, sm=6px, md=8px, lg=12px, xl=18px, full=50%.
+- Movimento: `--duration-fast/base/slow` (.25s/.35s/.9s), `--ease-smooth` e `--ease-brand` (`cubic-bezier(0.2, 0, 0, 1)`, desaceleração da marca).
+- Camadas (`--z-*`): bg=0, content=1, scene=2, fade=3, apps=4, header=50, skip=200, cursor=1000, meter=2000.
+
+Regra: estilos novos usam tokens; valores fora da escala só com motivo (ex.: 35px do grid do footer, 14px da base do notebook).
+
 ## Revisão visual pendente
 
 Verificar o percurso em aparelho físico, barras móveis do navegador, legibilidade durante as transições e custo de renderização. O protótipo não representa aprovação final de copy, tipografia ou duração do scroll.

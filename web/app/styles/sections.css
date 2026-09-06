@@ -2,7 +2,7 @@
   font-size: 10px;
   letter-spacing: 0.19em;
   color: #a0a6a3;
-  margin: 0 0 24px;
+  margin: 0 0 var(--space-6);
 }
 .landing-more {
   padding: 120px 6% 110px;
@@ -14,7 +14,7 @@
   font-weight: 400;
   letter-spacing: -0.045em;
   line-height: 1.1;
-  margin: 0 0 40px;
+  margin: 0 0 var(--space-10);
   font-size: clamp(30px, 3.6vw, 52px);
 }
 .more-list {
@@ -23,9 +23,9 @@
 .more-list a {
   display: grid;
   grid-template-columns: 90px 1fr 1fr 30px;
-  gap: 16px;
+  gap: var(--space-4);
   align-items: center;
-  padding: 24px 12px;
+  padding: var(--space-6) var(--space-3);
   border-bottom: 1px solid #363b39;
 }
 .more-list a:hover {
@@ -61,7 +61,7 @@
   .more-list a {
     grid-template-columns: 65px 1fr 24px;
     gap: 10px;
-    padding: 18px 4px;
+    padding: 18px var(--space-1);
   }
   .more-list a span:nth-child(3) {
     grid-column: 2;

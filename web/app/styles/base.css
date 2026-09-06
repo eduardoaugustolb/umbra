@@ -6,6 +6,42 @@
   --bone: #c5c7c5;
   --muted: #858a89;
   --line: #252727;
+
+  /* Espaçamento (múltiplos de 4px, guia de marca). */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  /* Raios de borda. */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 18px;
+  --radius-full: 50%;
+
+  /* Movimento (desaceleração da marca em --ease-brand). */
+  --duration-fast: 0.25s;
+  --duration-base: 0.35s;
+  --duration-slow: 0.9s;
+  --ease-smooth: ease;
+  --ease-brand: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Camadas. */
+  --z-bg: 0;
+  --z-content: 1;
+  --z-scene: 2;
+  --z-fade: 3;
+  --z-apps: 4;
+  --z-header: 50;
+  --z-skip: 200;
+  --z-cursor: 1000;
+  --z-meter: 2000;
 }
 * {
   box-sizing: border-box;
@@ -38,8 +74,8 @@ button:focus-visible {
   left: 10px;
   background: #c5c7c5;
   color: #050505;
-  padding: 12px;
-  z-index: 200;
+  padding: var(--space-3);
+  z-index: var(--z-skip);
   transform: translateY(-150%);
 }
 .skip-link:focus {
@@ -49,7 +85,7 @@ header {
   height: 100px;
   position: absolute;
   inset: 0 0 auto;
-  z-index: 50;
+  z-index: var(--z-header);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -67,12 +103,12 @@ header {
   color: var(--bone);
   padding: 13px 17px;
   border: 1px solid #363b39;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   background: transparent;
   cursor: pointer;
 }
 .header-link span {
-  margin-left: 12px;
+  margin-left: var(--space-3);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +123,7 @@ footer nav a {
   justify-content: center;
 }
 footer nav a {
-  gap: 8px;
+  gap: var(--space-2);
 }
 .header-link svg,
 footer nav svg {

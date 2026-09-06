@@ -176,25 +176,26 @@ export function LandingPage() {
             invalidateOnRefresh: true,
             onUpdate(self) {
               const p = self.progress;
-              if (p > 0.38 && !firstShown) {
+              // VS Code entra com o notebook por um triz de terminar de abrir.
+              if (p > 0.45 && !firstShown) {
                 firstShown = true;
                 firstIntro.play();
-              } else if (p <= 0.38 && firstShown) {
+              } else if (p <= 0.45 && firstShown) {
                 firstShown = false;
                 firstIntro.reverse();
               }
               // As trocas disparam no meio para o final de cada fade da screenshot.
-              if (p > 0.57 && !swapped1) {
+              if (p > 0.6 && !swapped1) {
                 swapped1 = true;
                 swap1.play();
-              } else if (p <= 0.57 && swapped1) {
+              } else if (p <= 0.6 && swapped1) {
                 swapped1 = false;
                 swap1.reverse();
               }
-              if (p > 0.8 && !swapped2) {
+              if (p > 0.78 && !swapped2) {
                 swapped2 = true;
                 swap2.play();
-              } else if (p <= 0.8 && swapped2) {
+              } else if (p <= 0.78 && swapped2) {
                 swapped2 = false;
                 swap2.reverse();
               }
@@ -229,36 +230,37 @@ export function LandingPage() {
             { opacity: 1, duration: 0.45 },
             0.8,
           )
-          .addLabel("fade1", 1.35)
+          .addLabel("fade1", 1.85)
           .fromTo(
             ".capture-vscode",
             { opacity: 1 },
             { opacity: 0, duration: 0.5 },
-            1.35,
+            1.85,
           )
           .fromTo(
             ".capture-zed",
             { opacity: 0 },
             { opacity: 1, duration: 0.5 },
-            1.35,
+            1.85,
           )
-          .addLabel("fade2", 2.05)
+          .addLabel("fade2", 2.55)
           .fromTo(
             ".capture-zed",
             { opacity: 1 },
             { opacity: 0, duration: 0.5 },
-            2.05,
+            2.55,
           )
           .fromTo(
             ".capture-kitty",
             { opacity: 0 },
             { opacity: 1, duration: 0.5 },
-            2.05,
+            2.55,
           )
+          .addLabel("kitty", 3.1)
           .fromTo(
             ".landing-meter span",
             { scaleX: 0 },
-            { scaleX: 1, duration: 2.95 },
+            { scaleX: 1, duration: 3.6 },
             0,
           );
 

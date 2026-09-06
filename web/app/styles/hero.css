@@ -56,6 +56,12 @@
 }
 .landing-heading .cta span {
   margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.landing-heading .cta span svg {
+  display: block;
 }
 .landing-heading .cta svg {
   flex: none;

@@ -73,6 +73,12 @@ header {
 }
 .header-link span {
   margin-left: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-link span svg {
+  display: block;
 }
 .header-link,
 footer nav a {

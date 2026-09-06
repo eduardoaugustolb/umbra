@@ -7,11 +7,13 @@ export type NotebookApp = {
 };
 
 export const NOTEBOOK_APPS: NotebookApp[] = [
+  { id: "vscode", name: "VS Code", role: "Editor" },
   { id: "zed", name: "Zed", role: "Editor" },
   { id: "kitty", name: "Kitty", role: "Terminal" },
 ];
 
-export const themeGuideUrl = (id: string) => `${REPO}/tree/main/themes/${id}/umbra`;
+export const themeGuideUrl = (id: string) =>
+  `${REPO}/tree/main/themes/${id}/umbra`;
 
 export type ThemeEntry = {
   name: string;
@@ -21,6 +23,12 @@ export type ThemeEntry = {
 };
 
 export const THEMES: ThemeEntry[] = [
+  {
+    name: "VS Code",
+    role: "Editor",
+    detail: "Tema escuro com sintaxe semântica.",
+    path: "themes/vscode/umbra",
+  },
   {
     name: "Zed",
     role: "Editor",

@@ -88,6 +88,7 @@
   border: 0;
   border-radius: 3px;
 }
+.capture-zed,
 .capture-kitty {
   opacity: 0;
 }
@@ -198,6 +199,7 @@
   .notebook-lid {
     transform: none !important;
   }
+  .capture-zed,
   .capture-kitty {
     opacity: 1;
   }

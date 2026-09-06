@@ -89,6 +89,10 @@ export function LandingPage() {
             });
           });
 
+        const vscodeText = SplitText.create(".app-vscode .app-reveal", {
+          type: "words",
+          mask: "words",
+        });
         const zedText = SplitText.create(".app-zed .app-reveal", {
           type: "words",
           mask: "words",
@@ -99,16 +103,37 @@ export function LandingPage() {
         });
 
         // Textos disparam por marco (in/out com duração própria), não acompanham o scrub.
+        gsap.set(vscodeText.words, { yPercent: 100 });
         gsap.set(zedText.words, { yPercent: 100 });
         gsap.set(kittyText.words, { yPercent: 100 });
-        gsap.set(".app-kitty", { autoAlpha: 0 });
+        gsap.set(".app-vscode, .app-kitty", { autoAlpha: 0 });
 
-        const zedIntro = gsap
+        const firstIntro = gsap
           .timeline({ paused: true })
+          .fromTo(
+            ".app-vscode",
+            { autoAlpha: 0 },
+            { autoAlpha: 1, duration: 0.35, ease: "power2.out" },
+          )
+          .to(
+            vscodeText.words,
+            { yPercent: 0, duration: 0.6, stagger: 0.05, ease: "power3.out" },
+            "<0.05",
+          );
+
+        const swap1 = gsap
+          .timeline({ paused: true })
+          .to(".app-vscode", {
+            autoAlpha: 0,
+            y: -10,
+            duration: 0.35,
+            ease: "power2.in",
+          })
           .fromTo(
             ".app-zed",
             { autoAlpha: 0 },
             { autoAlpha: 1, duration: 0.35, ease: "power2.out" },
+            "<0.1",
           )
           .to(
             zedText.words,
@@ -116,7 +141,7 @@ export function LandingPage() {
             "<0.05",
           );
 
-        const swap = gsap
+        const swap2 = gsap
           .timeline({ paused: true })
           .to(".app-zed", {
             autoAlpha: 0,
@@ -136,8 +161,9 @@ export function LandingPage() {
             "<0.05",
           );
 
-        let zedShown = false;
-        let swapped = false;
+        let firstShown = false;
+        let swapped1 = false;
+        let swapped2 = false;
 
         // A animação termina 160px antes da cena soltar.
         const tl = gsap.timeline({
@@ -150,20 +176,27 @@ export function LandingPage() {
             invalidateOnRefresh: true,
             onUpdate(self) {
               const p = self.progress;
-              if (p > 0.44 && !zedShown) {
-                zedShown = true;
-                zedIntro.play();
-              } else if (p <= 0.44 && zedShown) {
-                zedShown = false;
-                zedIntro.reverse();
+              if (p > 0.38 && !firstShown) {
+                firstShown = true;
+                firstIntro.play();
+              } else if (p <= 0.38 && firstShown) {
+                firstShown = false;
+                firstIntro.reverse();
               }
-              // A troca Zed → Kitty dispara no meio para o final do fade da screenshot (fade: 2.05–2.55/2.95).
-              if (p > 0.8 && !swapped) {
-                swapped = true;
-                swap.play();
-              } else if (p <= 0.8 && swapped) {
-                swapped = false;
-                swap.reverse();
+              // As trocas disparam no meio para o final de cada fade da screenshot.
+              if (p > 0.57 && !swapped1) {
+                swapped1 = true;
+                swap1.play();
+              } else if (p <= 0.57 && swapped1) {
+                swapped1 = false;
+                swap1.reverse();
+              }
+              if (p > 0.8 && !swapped2) {
+                swapped2 = true;
+                swap2.play();
+              } else if (p <= 0.8 && swapped2) {
+                swapped2 = false;
+                swap2.reverse();
               }
             },
           },
@@ -196,20 +229,32 @@ export function LandingPage() {
             { opacity: 1, duration: 0.45 },
             0.8,
           )
-          .addLabel("zed", 1.7)
+          .addLabel("fade1", 1.35)
           .fromTo(
-            ".capture-kitty",
+            ".capture-vscode",
+            { opacity: 1 },
+            { opacity: 0, duration: 0.5 },
+            1.35,
+          )
+          .fromTo(
+            ".capture-zed",
             { opacity: 0 },
             { opacity: 1, duration: 0.5 },
-            2.05,
+            1.35,
           )
+          .addLabel("fade2", 2.05)
           .fromTo(
             ".capture-zed",
             { opacity: 1 },
             { opacity: 0, duration: 0.5 },
             2.05,
           )
-          .addLabel("kitty", 2.85)
+          .fromTo(
+            ".capture-kitty",
+            { opacity: 0 },
+            { opacity: 1, duration: 0.5 },
+            2.05,
+          )
           .fromTo(
             ".landing-meter span",
             { scaleX: 0 },

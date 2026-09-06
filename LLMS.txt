@@ -19,6 +19,7 @@ TEMAS DISPONÍVEIS
 -----------------
 
 - Zed: themes/zed/umbra/umbra.json
+- VS Code: themes/vscode/umbra (package.json + themes/umbra-color-theme.json + themes/umbra-ink-color-theme.json)
 - Kitty: themes/kitty/umbra/kitty.conf
 - Starship: themes/starship/umbra/starship.toml
 
@@ -55,8 +56,9 @@ FLUXO DE INSTALAÇÃO
 3. Mostre à pessoa, em linguagem simples, o que será alterado.
 4. Crie backup com data e hora antes da alteração.
 5. Instale o tema usando o método apropriado:
-   - Zed: copie somente o JSON para o diretório de temas do Zed.
-   - Kitty: adicione um include para o arquivo Umbra na configuração pessoal.
+    - Zed: copie somente o JSON para o diretório de temas do Zed.
+    - VS Code: copie a pasta da extensão para o diretório de extensões ou instale o .vsix; nunca edite settings.json além do colorTheme.
+    - Kitty: adicione um include para o arquivo Umbra na configuração pessoal.
    - Starship: mescle as seções do tema e defina palette = "umbra".
 6. Preserve configurações de fonte, atalhos, plugins, módulos e comportamento.
 7. Valide a configuração e confirme que o arquivo antigo continua recuperável.
@@ -97,6 +99,7 @@ Antes da instalação, calcule ou registre o tamanho e a data do arquivo origina
 sem guardar seu conteúdo no log. Depois, valide o arquivo instalado:
 
 - Zed: confirme que o JSON é válido e que contém um tema chamado Umbra.
+- VS Code: confirme que os dois JSONs são válidos e que o package.json declara os temas Umbra e Umbra Ink.
 - Kitty: confirme que o arquivo possui background, foreground e as cores ANSI.
 - Starship: valide o TOML com o próprio Starship quando disponível.
 

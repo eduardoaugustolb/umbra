@@ -6,9 +6,9 @@ import "./styles/notebook.css";
 import "./styles/sections.css";
 import "./styles/cursor.css";
 
-const title = "Temas escuros e coerentes para Zed, Kitty e Starship | Umbra";
+const title = "Temas escuros e coerentes para VS Code, Zed, Kitty e Starship | Umbra";
 const description =
-  "Umbra é um sistema visual com temas escuros para o seu fluxo de trabalho: temas para Zed e Kitty, prompt para Starship e wallpapers. Mesmas superfícies, mesmo contraste, cor com função.";
+  "Umbra é um sistema visual com temas escuros para o seu fluxo de trabalho: temas para VS Code, Zed e Kitty, prompt para Starship e wallpapers. Mesmas superfícies, mesmo contraste, cor com função.";
 
 export const metadata: Metadata = {
   title,

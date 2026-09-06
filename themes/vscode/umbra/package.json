@@ -1,0 +1,31 @@
+{
+  "name": "umbra-theme",
+  "displayName": "Umbra",
+  "description": "Ambientes digitais com menos ruído e mais presença. Editor dark charcoal com sintaxe semântica e acentos controlados.",
+  "version": "0.3.0",
+  "publisher": "umbra",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eduardoaugustolb/umbra"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Themes"],
+  "keywords": ["umbra", "dark", "charcoal", "quiet surfaces", "semantic color"],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Umbra",
+        "uiTheme": "vs-dark",
+        "path": "./themes/umbra-color-theme.json"
+      },
+      {
+        "label": "Umbra Ink",
+        "uiTheme": "vs-dark",
+        "path": "./themes/umbra-ink-color-theme.json"
+      }
+    ]
+  }
+}

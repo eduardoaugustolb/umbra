@@ -29,6 +29,7 @@ Começamos com temas para desenvolvimento e terminal, mas a identidade foi pensa
 | Aplicação | Tema | Experiência |
 | --- | --- | --- |
 | [Zed](themes/zed/umbra/README.md) | Umbra | Editor dark charcoal com sintaxe semântica e acentos controlados |
+| [VS Code](themes/vscode/umbra/README.md) | Umbra / Umbra Ink | Extensão dark charcoal (ou Ink no editor) com a mesma sintaxe do Zed |
 | [Kitty](themes/kitty/umbra/README.md) | Umbra | Terminal com ANSI coerente e superfícies unificadas |
 | [Starship](themes/starship/umbra/README.md) | Umbra | Prompt compacto com contexto Git e runtimes discretos |
 
@@ -65,6 +66,7 @@ Agentes de IA devem ler o [LLMS.txt](LLMS.txt) antes de instalar qualquer tema. 
 ```text
 themes/
 ├── zed/umbra/       # tema para o Zed
+├── vscode/umbra/    # extensão para o VS Code (Umbra + Umbra Ink)
 ├── kitty/umbra/     # tema para o Kitty
 ├── starship/umbra/  # prompt para o Starship
 └── desktop/         # ambientes gráficos futuros

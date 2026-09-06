@@ -14,8 +14,8 @@ export function SiteFooter() {
         umbra
       </a>
       <p>
-        Temas escuros e coerentes para Zed, Kitty e Starship, além de
-        wallpapers.
+        Temas escuros e coerentes para VS Code, Zed, Kitty e Starship, além
+        de wallpapers.
       </p>
       <nav aria-label="Links do projeto">
         {PROJECT_LINKS.map((link) => (

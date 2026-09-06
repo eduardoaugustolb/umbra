@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Umbra — avatar UM</title>
+  <rect width="512" height="512" fill="#000000"/>
+  <path transform="translate(104 140) scale(2)" d="M16 16V68C16 108 72 108 72 68V16L104 60L136 16V100" fill="none" stroke="#E6E6E6" stroke-width="16" stroke-linejoin="bevel"/>
+</svg>

@@ -168,6 +168,9 @@
   .landing-heading > p:last-child {
     font-size: 13px;
   }
+  .stage-fade {
+    display: none;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .landing-heading,

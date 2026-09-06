@@ -1,0 +1,152 @@
+.landing-runway {
+  height: calc(300svh + 160px);
+  position: relative;
+}
+.landing-stage {
+  height: 100svh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: clip;
+  padding: 6%;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.landing-heading {
+  text-align: center;
+  max-width: 780px;
+  position: relative;
+  z-index: 1;
+}
+.landing-heading > p:last-child {
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 480px;
+  margin: 24px auto 0;
+  color: var(--muted);
+}
+.landing-heading h1 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+  margin: 0;
+  font-size: clamp(32px, 4.4vw, 64px);
+}
+.landing-heading .cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  padding: 15px 26px;
+  border: 0;
+  border-radius: 8px;
+  background: #c5c7c5;
+  color: #050505;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.landing-heading .cta span {
+  margin-left: 10px;
+}
+.landing-heading .cta svg {
+  flex: none;
+}
+.landing-meter {
+  position: absolute;
+  bottom: 30px;
+  left: 6%;
+  right: 6%;
+  height: 2px;
+  background: #252727;
+  z-index: 2000;
+}
+.landing-meter span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #c5c7c5;
+  transform-origin: left;
+}
+/* Esconde o limite da base no eixo z: some em gradiente para o fundo. */
+.stage-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 48svh;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(5, 5, 5, 0.55) 55%,
+    var(--ink) 100%
+  );
+}
+/* Evita flash antes da hidratação: começa em 0 e o JS libera com .landing-ready. */
+.landing-heading,
+.notebook-apps,
+.notebook {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+.landing-ready .landing-heading {
+  opacity: 1;
+}
+.landing-ready .notebook-apps {
+  opacity: 1;
+  transition-delay: 0.15s;
+}
+.landing-ready .notebook {
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+/* Após a entrada, o scrub do GSAP assume a opacidade: sem transição para não dessincar. */
+.landing-settled .landing-heading,
+.landing-settled .notebook-apps,
+.landing-settled .notebook {
+  transition: none;
+}
+
+@media (max-width: 760px) {
+  .landing-heading h1 {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+  .landing-heading > p:last-child {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing-heading,
+  .notebook-apps,
+  .notebook {
+    opacity: 1;
+    transition: none;
+  }
+  .stage-fade {
+    display: none;
+  }
+  .landing-runway {
+    height: auto;
+  }
+  .landing-stage {
+    position: relative;
+    height: auto;
+    min-height: 85svh;
+    flex-direction: column;
+    gap: 35px;
+    padding: 120px 6% 80px;
+  }
+  .landing-meter {
+    display: none;
+  }
+}

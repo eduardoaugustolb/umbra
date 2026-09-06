@@ -1,0 +1,204 @@
+.notebook-apps {
+  position: absolute;
+  top: 5svh;
+  left: 6%;
+  right: 6%;
+  z-index: 4;
+  display: grid;
+  text-align: center;
+}
+.notebook-app {
+  grid-area: 1/1;
+}
+.notebook-app h2 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: clamp(24px, 3vw, 40px);
+  letter-spacing: -0.035em;
+  margin: 0 0 12px;
+}
+.notebook-app a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  border-bottom: 1px solid #c5c7c5;
+  padding-bottom: 5px;
+}
+.notebook-app a svg {
+  flex: none;
+}
+.notebook-app p {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 12px 0 0;
+}
+.app-zed {
+  visibility: hidden;
+}
+.continuity-surface {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  perspective: 1800px;
+  perspective-origin: 50% 38%;
+  pointer-events: none;
+  z-index: 2;
+}
+.notebook {
+  width: min(72vw, 1050px, calc(57svh * 1.65));
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1400px;
+  perspective-origin: 50% 35%;
+}
+.notebook-lid {
+  position: relative;
+  background: #111313;
+  border: 2px solid #555b5a;
+  border-radius: 18px 18px 5px 5px;
+  padding: 22px 12px 14px;
+  transform-origin: center bottom;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.notebook-camera {
+  position: absolute;
+  top: 8px;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #697271;
+}
+.capture-frame {
+  position: relative;
+  aspect-ratio: 1920/1046;
+  border: 1px solid #3b4242;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #101111;
+}
+.capture-frame img {
+  object-fit: contain;
+}
+.notebook-display {
+  border: 0;
+  border-radius: 3px;
+}
+.capture-kitty {
+  opacity: 0;
+}
+.notebook-base {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1.95;
+  transform-origin: center top;
+  transform: rotateX(78deg);
+  transform-style: preserve-3d;
+  background: linear-gradient(180deg, #232827, #555b59 65%, #717775);
+  border: 1px solid #858a89;
+  border-radius: 3px 3px 14px 14px;
+}
+.notebook-keyboard {
+  position: absolute;
+  inset: 8% 8% 39%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 4px;
+  background: #171a19;
+  padding: 6px;
+  border-radius: 5px;
+}
+.notebook-keyboard i {
+  display: block;
+  border-radius: 3px;
+  background: #080a09;
+  border: 1px solid #555b5a;
+  box-shadow: 0 2px 0 #000;
+}
+.notebook-trackpad {
+  position: absolute;
+  top: 67%;
+  left: 34%;
+  width: 32%;
+  height: 26%;
+  border: 1px solid #252727;
+  border-radius: 6px;
+  background: #555b59;
+}
+.notebook-front {
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: 7px;
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  background: linear-gradient(#858a89, #252727);
+  border-radius: 0 0 6px 6px;
+}
+
+@media (max-width: 760px) {
+  .notebook-apps {
+    top: 12svh;
+  }
+  .notebook-app h2 {
+    font-size: 26px;
+  }
+  .notebook {
+    width: 76vw;
+    perspective: 950px;
+  }
+  .notebook-lid {
+    padding: 16px 7px 9px;
+    border-radius: 11px 11px 3px 3px;
+    border-width: 1px;
+  }
+  .notebook-camera {
+    top: 5px;
+    width: 3px;
+    height: 3px;
+  }
+  .notebook-keyboard {
+    gap: 2px;
+    padding: 3px;
+  }
+  .continuity-surface {
+    perspective: 1200px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .notebook-apps {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .app-zed {
+    visibility: visible;
+  }
+  .continuity-surface {
+    position: relative;
+    width: 100%;
+    perspective: none;
+  }
+  .notebook {
+    transform: none !important;
+  }
+  .notebook-lid {
+    transform: none !important;
+  }
+  .capture-kitty {
+    opacity: 1;
+  }
+}

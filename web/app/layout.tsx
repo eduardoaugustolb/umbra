@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "lenis/dist/lenis.css";
-import "./globals.css";
+import "./styles/base.css";
+import "./styles/hero.css";
+import "./styles/notebook.css";
+import "./styles/sections.css";
+import "./styles/cursor.css";
 
 const title = "Temas escuros e coerentes para Zed, Kitty e Starship | Umbra";
 const description =

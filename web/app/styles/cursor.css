@@ -1,0 +1,24 @@
+.motion-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: white;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  will-change: transform;
+}
+.custom-cursor-active,
+.custom-cursor-active * {
+  cursor: none !important;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .motion-cursor {
+    display: none;
+  }
+}

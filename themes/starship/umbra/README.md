@@ -51,3 +51,7 @@ Os símbolos de branch e runtimes são ASCII para não exigir uma Nerd Font. O s
 ## Paleta
 
 O tema reutiliza os mesmos tokens do Zed e do Kitty: `bone` para conteúdo principal, `muted` para informação auxiliar, `lilac` para contexto Git, `sage_blue` para estado normal, `rose` para falhas e `amber`/`gold` para contexto de execução.
+
+---
+
+Umbra no GitHub: https://github.com/eduardoaugustolb/umbra

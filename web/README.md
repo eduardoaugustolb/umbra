@@ -44,3 +44,7 @@ Regra: estilos novos usam tokens; valores fora da escala só com motivo (ex.: 35
 ## Revisão visual pendente
 
 Verificar o percurso em aparelho físico, barras móveis do navegador, legibilidade durante as transições e custo de renderização. O protótipo não representa aprovação final de copy, tipografia ou duração do scroll.
+
+---
+
+Umbra no GitHub: https://github.com/eduardoaugustolb/umbra

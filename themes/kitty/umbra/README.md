@@ -51,3 +51,7 @@ Apague ou comente a linha `include` adicionada ao seu `kitty.conf` e recarregue 
 | Âmbar | `#CDA27C` |
 | Verde sálvia | `#83B89A` |
 | Azul-sálvia | `#9AB7B0` |
+
+---
+
+Umbra no GitHub: https://github.com/eduardoaugustolb/umbra

@@ -9,6 +9,8 @@ Duas variantes incluídas:
 | `Umbra` | Charcoal `#101111` | Charcoal `#101111` |
 | `Umbra Ink` | Ink `#050505` | Charcoal `#101111` |
 
+![Umbra no editor](screenshots/01-main.png)
+
 ## Paleta
 
 | Função | Cor | Uso |
@@ -31,27 +33,39 @@ Duas variantes incluídas:
 
 A regra é conter, não eliminar, a cor: cerca de 85–90% da experiência permanece em cinzas escuros e neutros. Variáveis comuns continuam em Bone para evitar ruído.
 
-## Instalação fácil
+## Instalação
 
-### Você precisa de
+### Pelo Marketplace (recomendado)
+
+- [Umbra Charcoal no Marketplace](https://marketplace.visualstudio.com/items?itemName=DevEduardo.umbra-charcoal-theme), ou:
+- `Ctrl/Cmd+Shift+X`, busque `Umbra Charcoal`, instale, depois `Ctrl-K Ctrl-T` e escolha `Umbra` ou `Umbra Ink`;
+- ou via CLI:
+
+```sh
+code --install-extension DevEduardo.umbra-charcoal-theme
+```
+
+### Desenvolvimento local
+
+#### Você precisa de
 
 - VS Code 1.80 ou superior.
 - Este repositório disponível localmente.
 
-### Instalar passo a passo (desenvolvimento local)
+#### Instalar passo a passo
 
 A partir da raiz do repositório, execute:
 
 ```sh
-cp -r themes/vscode/umbra "$HOME/.vscode/extensions/umbra.umbra-theme-0.3.0"
+cp -r themes/vscode/umbra "$HOME/.vscode/extensions/DevEduardo.umbra-charcoal-theme-0.3.0"
 ```
 
 Reinicie o VS Code, abra a paleta de comandos (`Ctrl-K Ctrl-T` / `Cmd-K Ctrl-T`) e escolha `Umbra` ou `Umbra Ink`.
 
 Para o VS Code Insiders ou VSCodium, o diretório de extensões muda:
 
-- Insiders: `$HOME/.vscode-insiders/extensions/umbra.umbra-theme-0.3.0`
-- VSCodium: `$HOME/.vscode-oss/extensions/umbra.umbra-theme-0.3.0`
+- Insiders: `$HOME/.vscode-insiders/extensions/DevEduardo.umbra-charcoal-theme-0.3.0`
+- VSCodium: `$HOME/.vscode-oss/extensions/DevEduardo.umbra-charcoal-theme-0.3.0`
 
 ### Empacotar como .vsix (opcional)
 
@@ -59,8 +73,8 @@ Se tiver o `@vscode/vsce` instalado:
 
 ```sh
 npm install -g @vscode/vsce
-vsce package --cwd themes/vscode/umbra
-code --install-extension themes/vscode/umbra/umbra-theme-0.3.0.vsix
+cd themes/vscode/umbra && vsce package
+code --install-extension themes/vscode/umbra/umbra-charcoal-theme-0.3.0.vsix
 ```
 
 ### Atualizar
@@ -72,7 +86,7 @@ Repita o comando `cp -r` (ou reinstale o `.vsix`) sempre que baixar uma nova ver
 Remova somente a pasta instalada:
 
 ```sh
-rm -rf "$HOME/.vscode/extensions/umbra.umbra-theme-0.3.0"
+rm -rf "$HOME/.vscode/extensions/DevEduardo.umbra-charcoal-theme-0.3.0"
 ```
 
 Isso não altera `settings.json` nem outras extensões. Se o tema ainda aparecer na lista, recarregue a janela.
@@ -81,11 +95,15 @@ Isso não altera `settings.json` nem outras extensões. Se o tema ainda aparecer
 
 - formato: TextMate `tokenColors` + `semanticTokenColors` com `semanticHighlighting`;
 - variantes: `Umbra` (vs-dark) e `Umbra Ink` (vs-dark);
-- testado com: VS Code 1.80+ (validar na sua versão antes de publicar);
+- requer: VS Code `^1.80.0` (conforme `engines` do `package.json`);
+- versão publicada: `0.3.0` como `DevEduardo.umbra-charcoal-theme`;
 - não inclui: fonte, ícones de arquivo/produto, ligaduras ou comportamento — o tema mexe só com cores.
 
 ## Limitações conhecidas
 
-- sem screenshots reais ainda — validar com conteúdo real (menus, busca, seleção, erros, diffs, painéis);
 - `terminal.ansiBlack` acompanha o fundo do editor em cada variante; sobre fundos explícitos escuros ele pode sumir — comportamento herdado do mapeamento Zed;
 - foco usa `#9AB7B0`; verificar contraste no seu monitor antes de considerar final.
+
+---
+
+Umbra no GitHub: https://github.com/eduardoaugustolb/umbra

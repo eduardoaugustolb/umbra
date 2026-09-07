@@ -11,3 +11,7 @@ Cada família deve ter seu próprio diretório contendo:
 
 O nome do arquivo JSON deve ser estável depois da primeira publicação. Variantes da mesma identidade podem viver no mesmo `themes` array; identidades visuais diferentes devem usar diretórios separados.
 
+---
+
+Umbra no GitHub: https://github.com/eduardoaugustolb/umbra
+

@@ -92,3 +92,7 @@ Umbra é um projeto proprietário. O uso pessoal local dos temas e wallpapers é
 ## #umbra
 
 `quiet surfaces` · `semantic color` · `night workflows` · `focused tools`
+
+---
+
+Umbra no GitHub: https://github.com/eduardoaugustolb/umbra

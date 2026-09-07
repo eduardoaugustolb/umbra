@@ -1,9 +1,9 @@
 {
-  "name": "umbra-theme",
-  "displayName": "Umbra",
+  "name": "umbra-charcoal-theme",
+  "displayName": "Umbra Charcoal",
   "description": "Ambientes digitais com menos ruído e mais presença. Editor dark charcoal com sintaxe semântica e acentos controlados.",
   "version": "0.3.0",
-  "publisher": "umbra",
+  "publisher": "DevEduardo",
   "license": "SEE LICENSE IN LICENSE",
   "icon": "icon.png",
   "repository": {

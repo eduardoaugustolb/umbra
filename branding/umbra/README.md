@@ -25,3 +25,7 @@ Os originais são SVGs editáveis, sem imagens raster embutidas ou recursos remo
 Reprodução: largura mínima recomendada de 32 px para o símbolo; margem livre de 16 unidades além do desenho, cuja caixa externa tem aproximadamente 136 × 101 unidades. Para avatares, usar o arquivo dedicado com folga para recorte circular. Preto sobre claro; Bone sobre preto. Não espelhar, empilhar, recortar ou separar as letras por cor.
 
 Construção autoral assistida por Codex. Não há nova licença de distribuição estabelecida por este diretório. A nova direção está implementada; associação espontânea à marca e leitura por pessoas ainda não foram medidas.
+
+---
+
+Umbra no GitHub: https://github.com/eduardoaugustolb/umbra

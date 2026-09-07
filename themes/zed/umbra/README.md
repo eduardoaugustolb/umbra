@@ -69,3 +69,7 @@ Isso não altera as configurações gerais do Zed nem outros temas instalados.
 - formato de tema: Zed Theme Schema `v0.2.0`;
 - aparência: `dark`;
 - variante atual: `Umbra`.
+
+---
+
+Umbra no GitHub: https://github.com/eduardoaugustolb/umbra
